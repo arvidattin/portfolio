@@ -15,6 +15,138 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  --background: 240 10% 3.9%;   
+  --foreground: 0 0% 98%;      
+  
+  --primary: 142 76% 69%;    
+  --primary-foreground: 240 5.9% 10%; 
+  
+  --accent: 183 100% 35.5%;   
+  --accent-foreground: 240 5.9% 10%; 
+  --portfolio-light:0 0% 93.8%;
+
+  --portfolio-accent: 183  100%  47%;
+}
+.underline-animation {
+  /* 1. Make the parent (the <span>) the reference point */
+  @apply relative no-underline;
+}
+
+.underline-animation::after {
+  content: "";
+  /* 2. Positioning and Initial State */
+  @apply absolute left-0 bottom-0 h-[1px] w-0 bg-portfolio-accent transition-all duration-500;
+  /* Use bg-portfolio-accent for the line color */
+}
+
+.underline-animation:hover::after {
+  /* 3. Hover State: Expand the width */
+  @apply w-full;
+}
+/* Define the keyframes for rotation */
+
+@keyframes spin-clockwise {
+
+  from {
+  
+  transform: rotate(0deg);
+  
+  }
+  
+  to {
+  
+  transform: rotate(360deg);
+  
+  }
+  
+  }
+  
+  
+  
+  .logo-ring-animation {
+  
+  /* No change here, keeps the container set up */
+  
+  @apply relative inline-flex items-center justify-center p-2 rounded-full overflow-hidden;
+  
+  /* Add group for hover targeting */
+  
+  
+  }
+  
+  
+  
+  .logo-ring-animation::after {
+  
+  content: "";
+  
+  /* 1. Create a thick border-like ring */
+  
+  @apply absolute inset-0 rounded-full transition-opacity duration-500;
+  
+  
+  
+  /* 2. Style the ring using conic-gradient (Manual CSS) */
+  
+  background: conic-gradient(
+  
+  /* Start with your portfolio-accent color */
+  
+  hsl(var(--portfolio-accent)) 0deg,
+  
+  /* End with your background color to create the sweep effect */
+  
+  transparent 250deg
+  
+  );
+  
+  
+  /* 3. Initial state: Invisible and not spinning */
+  
+  opacity: 0;
+  
+  
+  /* 4. Mask the center to reveal only the border */
+  
+  mask: radial-gradient(
+  
+  transparent 50%,
+  
+  white 75%
+  
+  );
+  
+  
+  /* Use -webkit-mask for compatibility */
+  
+  -webkit-mask: radial-gradient(
+  
+  transparent 55%,
+  
+  white 85%
+  
+  );
+  
+  }
+  
+  
+  
+  .logo-ring-animation:hover::after {
+  
+  /* 5. Hover State: Become visible and start rotation */
+  
+  @apply opacity-100;
+  
+  animation: spin-clockwise 1.5s  linear infinite; /* Start the rotation animation */
+  
+  }
+  
+  
+
+html {
+  @apply scroll-smooth;
 }
 
 a {
