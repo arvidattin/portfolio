@@ -1,3 +1,4 @@
+//Index.jsx
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import React from "react";
@@ -6,9 +7,9 @@ import React from "react";
 const Index = () => {
   return (
 
-    <div className= "w-screen min-h-screen bg-gray-500 flex flex-col">
+    <div className= "h-screen overflow-hidden flex flex-col">
       <Navbar />
-
+      <Hero />
     </div>
   );
 };

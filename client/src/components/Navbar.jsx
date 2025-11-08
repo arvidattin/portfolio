@@ -1,44 +1,76 @@
-import React from "react";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { VscGithubAlt } from "react-icons/vsc";
-import { SiAdobeacrobatreader } from "react-icons/si";
 
 const Navbar = () => {
-  const handleScroll = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+
   return (
-    <nav className= "flex flex-row items-center justify-between gap-2 bg-dark-base w-full transition-shadow duration-500  shadow-[#00ADB5]/20 hover:shadow-xl hover:shadow-[#00ADB5]/40 shadow-lg ">
-      {/* Navbar content */}
- <h1 className="text-xs text-portfolio-accent font-bold p-4">Portfolio</h1>
-      <div className="flex flex-row justify-between gap-4">
-        <div className="flex flex-row  items-center">
-        <span className="text-[0.55rem] text-portfolio-accent mr-1" >01. </span> 
-        <span className="text-[0.5rem] font-bold text-accent-light hover:text-portfolio-accent transition-colors duration-300 underline-animation"> About</span>
-        </div>
-        <div className="flex flex-row items-center">
-        <span className="text-[0.55rem] text-portfolio-accent mr-1" >02. </span> 
-        <span className="text-[0.5rem] font-bold text-accent-light hover:text-portfolio-accent transition-colors duration-300 underline-animation"> Projects</span>
-        </div>
-        <div className="flex flex-row  items-center">
-        <span className="text-[0.55rem] text-portfolio-accent mr-1" >03. </span> 
-        <span className="text-[0.5rem] font-bold text-accent-light hover:text-portfolio-accent transition-colors duration-300 underline-animation"> Skills</span>
-        </div>
-      
-      </div>
-      <div className="flex flex-row  items-center">
-      <div className="mr-5 logo-ring-animation">
-   {/* Github Icon Animation */}
-    <VscGithubAlt className= "hover:text-portfolio-accent transition-colors duration-300" />
-   
+    <nav
+      className="fixed top-0 inset-x-0 z-50
+        flex items-center w-full justify-between gap-2 px-4 py-2
+        transition-all duration-700 shadow-xs bg-dark-base shadow-[#00ADB5]/40
+        hover:shadow-lg hover:shadow-[#00ADB5]/40"
+    >
+      <h1 className="text-2xl text-portfolio-accent font-bold p-2">Portfolio</h1>
 
+      <div className="flex flex-row justify-between gap-10 ">
+        <div>
+      <span className="text-sm text-portfolio-accent mr-1">01.</span> 
+        <button
+          onClick={() => smoothScrollTo("about", 1000)}
+          className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+        >
+       About
+        </button>
+        </div>
+        <div>
+        <span className="text-sm text-portfolio-accent mr-1">02.</span>
+        <button
+          onClick={() => smoothScrollTo("projects", 1000)}
+          className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+        >
+         Projects
+        </button>
+        </div>  
+        <div>
+        <span className="text-sm text-portfolio-accent mr-1">03.</span>
+        <button
+          onClick={() => smoothScrollTo("skills", 1000)}
+          className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+        >
+         Skills
+        </button>
+        </div>
       </div>
 
+      <div className="flex flex-row items-center">
+        <div className="mr-5 logo-ring-animation">
+          <VscGithubAlt className="text-xl hover:text-portfolio-accent transition-colors duration-300" />
+        </div>
       </div>
     </nav>
   );
+};
 
 
+function smoothScrollTo(id, duration = 1000) {
+  const container = document.getElementById("scrollRoot");
+  const target = document.getElementById(id);
+  if (!container || !target) return;
+
+  const top =
+    target.getBoundingClientRect().top -
+    container.getBoundingClientRect().top +
+    container.scrollTop;
+
+  container.classList.add("snap-none"); 
+
+  container.scrollTo({ top, behavior: "smooth" });
+
+  window.clearTimeout(smoothScrollTo._t);
+  smoothScrollTo._t = window.setTimeout(() => {
+    container.classList.remove("snap-none");
+  }, duration + 100);
 }
+
 
 export default Navbar;
