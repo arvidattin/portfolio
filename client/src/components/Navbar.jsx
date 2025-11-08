@@ -7,10 +7,11 @@ const Navbar = () => {
     <nav
       className="fixed top-0 inset-x-0 z-50
         flex items-center w-full justify-between gap-2 px-4 py-2
-        transition-all duration-700 shadow-xs bg-dark-base shadow-[#00ADB5]/40
-        hover:shadow-lg hover:shadow-[#00ADB5]/40"
+        transition-all duration-700 shadow-sm bg-dark-base shadow-[#00ADB5]/40
+        hover:shadow-lg hover:shadow-[#00ADB5]/20"
     >
-      <h1 className="text-2xl text-portfolio-accent font-bold p-2">Portfolio</h1>
+      <button onClick={() => smoothScrollTo("start", 1000)} 
+      className ="text-2xl text-portfolio-accent font-bold p-2"> Portfolio </button>
 
       <div className="flex flex-row justify-between gap-10 ">
         <div>
