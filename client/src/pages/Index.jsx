@@ -9,7 +9,9 @@ const Index = () => {
 
     <div className= "h-screen overflow-hidden flex flex-col">
       <Navbar />
-      <Hero />
+      <main className="flex-1 pt-16 overflow-hidden">
+    <Hero />
+  </main>
     </div>
   );
 };

@@ -5,10 +5,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 inset-x-0 z-50
+      className="fixed top-0 inset-x-0 z-50 h-14
         flex items-center w-full justify-between gap-2 px-4 py-2
-        transition-all duration-700 shadow-sm bg-dark-base
-        hover:shadow-md hover:shadow-[#00ADB5]/10"
+        transition-all duration-700 bg-dark-base
+       "
     >
       <button onClick={() => smoothScrollTo("start", 1000)}
         className="text-2xl text-portfolio-accent font-bold p-2"> Portfolio </button>

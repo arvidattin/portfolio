@@ -7,6 +7,7 @@ import axis_logo from "../assets/axis_logo.png";
 import forsvaret_logo from "../assets/forsvaret_logo.png";
 import kriminalvarden_logo from "../assets/kriminalvarden_logo.png";
 import Coop_logo from "../assets/Coop_logo.png";
+import ProfilePicture from "../assets/ProfilePicture.png";
 
 const Hero = () => {
 
@@ -23,14 +24,15 @@ const Hero = () => {
 
 
   return (
-    <div id="scrollRoot" className="h-screen snap-y overflow-y-scroll snap-mandatory overscroll-contain">
+    <div id="scrollRoot" className="h-[calc(100vh-4rem)] snap-y overflow-y-scroll snap-mandatory overscroll-contain">
       {/* Page 0 */}
       <Element name="start">
-        <section id="start" ref={startRef} className="h-screen w-full relative snap-start snap-always flex bg-dark-base text-white text-4xl">
-          <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <section id="start" ref={startRef} className="h-[calc(100vh-4rem)] w-full snap-start snap-always  grid place-items-center  bg-dark-base text-white text-4xl">
+
+          <div className="absolute inset-0 flex items-center justify-center">
             {isInView && (
               <motion.span
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: -200 }}
                 whileInView={{
                   opacity: [0, 1, 1, 0],
                   y: [0, 0, 0, -12],
@@ -49,7 +51,7 @@ const Hero = () => {
             )}
           </div>
 
-          <div className="absolute gap-0 left-0 top-1/4 ml-8 md:ml-16 lg:ml-32 flex flex-col">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-row items-center justify-center gap-10">
             <div className="mb-2">
               {isInView && (
                 <motion.div
@@ -57,7 +59,7 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 3.1, duration: 1, ease: "easeIn" }}
                   viewport={{ once: false, amount: 0.5 }}
-                  className="text-portfolio-accent text-lg font-bold"
+                  className="text-portfolio-accent whitespace-nowrap text-lg font-bold"
                 >
                   Hi, my name is
                 </motion.div>
@@ -68,89 +70,92 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 3.1, duration: 1, ease: "easeIn" }}
                   viewport={{ once: false, amount: 0.5 }}
-                  className="text-4xl mb-4 font-bold"
+                  className="text-4xl mb-4 whitespace-nowrap font-bold"
                 >
                   Arvid Attin
                 </motion.div>
               )}
             </div>
-            {isInView && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 8, duration: 2, ease: "easeIn" }}
-                viewport={{ once: false, amount: 0.5 }}
-                className="text-gray-500 text-base font-bold"
-              >
-                I'm a dedicated and passionate
-              </motion.div>
-            )}
-            {isInView && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 5, duration: 1, ease: "easeIn" }}
-                viewport={{ once: false, amount: 0.5 }}
-                className="text-slate-300 mb-2 text-2xl font-bold"
-              >
-                Fullstack developer
-              </motion.div>
-            )}
-            {isInView && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 8, duration: 2, ease: "easeIn" }}
-                viewport={{ once: false, amount: 0.5 }}
-                className="text-gray-500 text-base font-bold"
-              >
-                with a Master of Science in
-              </motion.div>
-            )}
-            {isInView && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 6, duration: 1, ease: "easeIn" }}
-                viewport={{ once: false, amount: 0.5 }}
-                className="text-slate-300 mb-2 text-2xl font-bold"
-              >
-                Information Technology
-              </motion.div>
-            )}
+
+            <div>
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 8, duration: 2, ease: "easeIn" }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  className="text-gray-500 text-base whitespace-nowrap font-bold"
+                >
+                  I'm a dedicated and passionate
+                </motion.div>
+              )}
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 5, duration: 1, ease: "easeIn" }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  className="text-slate-300 mb-2 text-2xl whitespace-nowrap font-bold"
+                >
+                  Fullstack developer
+                </motion.div>
+              )}
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 8, duration: 2, ease: "easeIn" }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  className="text-gray-500 text-base whitespace-nowrap font-bold"
+                >
+                  with a Master of Science in
+                </motion.div>
+              )}
+              {isInView && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 6, duration: 1, ease: "easeIn" }}
+                  viewport={{ once: false, amount: 0.5 }}
+                  className="text-slate-300 mb-2 text-2xl whitespace-nowrap font-bold"
+                >
+                  Information Technology
+                </motion.div>
+              )}
+            </div>
           </div>
         </section>
       </Element>
-
       {/* Page 1 */}
       <Element name="about">
-        <section id="about" ref={aboutRef} className="h-screen w-full flex items-center justify-center marker:flex snap-start snap-always bg-gray-900 text-white text-4xl">
-          <div className=" absolute inset-0 z-10 flex items-center justify-center">
+        <section
+          id="about"
+          ref={aboutRef}
+          className="relative h-[calc(100vh-4rem)] w-full grid place-items-stretch snap-start snap-always bg-dark-base text-white"
+        >
+          {/* Centered animated heading (absolute overlay) */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
             {inAbout && (
               <motion.div className="inline-block">
                 <motion.span
                   initial={{ opacity: 0, y: 12 }}
-                  whileInView={{
-                    opacity: [0, 1, 1, 0],
-                    y: [0, 0, 0, -30],
-                  }}
+                  whileInView={{ opacity: [0, 1, 1, 0], y: [0, 0, 0, -30] }}
                   transition={{
                     duration: 3.0,
                     times: [0, 0.222, 0.833, 1],
                     ease: ["easeOut", "linear", "easeIn"],
-                    delay: 0.0,
                   }}
                   viewport={{ once: false, amount: 0.5 }}
-                  className="relative inline-block pb-1 text-5xl font-bold"
+                  className="relative inline-block pb-1 text-3xl sm:text-4xl md:text-5xl font-bold text-center"
                 >
                   01. About
                   <motion.i
                     aria-hidden
-                    className=" left-0 bottom-0 h-[3px] w-full bg-portfolio-accent origin-left"
+                    className="absolute left-0 bottom-0 h-[3px] w-full bg-portfolio-accent origin-left"
                     initial={{ scaleX: 0, opacity: 0 }}
                     whileInView={{ scaleX: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
                     transition={{
-                      duration: 3.6,
+                      duration: 3.0,
                       times: [0, 0.222, 0.833, 1],
                       ease: ["easeOut", "linear", "easeIn"],
                     }}
@@ -160,53 +165,26 @@ const Hero = () => {
               </motion.div>
             )}
           </div>
+
+          {/* Content container — appears after the heading */}
           {inAbout && (
-            <div className="absolute flex justify-center items-center top-1/4 ml-8 mb-8 mr-8 md:ml-16 lg:ml-32 ">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <ExperienceCard
-                  duration="Summer 2025"
-                  company="Axis Communications"
-                  title="Developer Intern"
-                  logo={axis_logo}
-
-                />
-                <ExperienceCard
-                  duration="June 2022 - March 2025"
-                  company="Kriminalvården"
-                  title="Correctional Officer"
-                  logo={kriminalvarden_logo}
-
-                />
-
-                <ExperienceCard
-                  duration="September 2019 - January 2024"
-                  company="Armed Forces "
-                  title="GSS/T - Part-time Soldier"
-                  logo={forsvaret_logo}
-
-                />
-
-                <ExperienceCard
-                  duration="August 2016 - August 2019"
-                  company="Coop "
-                  title="Store employee"
-                  logo={Coop_logo}
-
-                />
-
-
-              </div>
-
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 3.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className=" box-border h-full w-full p-5 self-stretch"
+            >
+              {/* This blue fills the content box (inside padding), so white padding stays visible */}
+              <div className="bg-gray-800/50 shadow-inner  shadow-portfolio-accent/45 w-full h-full rounded-lg"> </div>
+            </motion.div>
           )}
         </section>
       </Element>
 
-
       {/* Page 2 */}
       <Element name="projects">
-        <section id="projects" ref={projectsRef} className="h-screen w-full snap-start snap-always flex items-center justify-center bg-gray-900 text-white text-4xl">
-          {inProjects && (
+        <section id="projects" ref={projectsRef} className="relative h-[calc(100vh-4rem)] w-full grid place-items-center snap-start snap-always bg-gray-900">
+          {inProjects && (/*  */
             <motion.div className="inline-block">
               <motion.span
                 initial={{ opacity: 0, y: 12 }}
@@ -240,7 +218,7 @@ const Hero = () => {
             </motion.div>
           )}
         </section>
-      </Element>
+      </Element >
 
 
       <Element name="skills">
@@ -248,7 +226,7 @@ const Hero = () => {
           <h1>Page 3: Call to Action</h1>
         </section>
       </Element>
-    </div>
+    </div >
   );
 };
 
