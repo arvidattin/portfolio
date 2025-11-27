@@ -2,13 +2,57 @@ import React, { useState, useEffect } from "react";
 import { VscGithubAlt } from "react-icons/vsc";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  useEffect(() => {
+    let timeoutId;
+
+    const handleScroll = () => {
+      const scrollContainer = document.getElementById("scrollRoot");
+      if (!scrollContainer) return;
+
+      const scrollTop = scrollContainer.scrollTop;
+      const isAtTop = scrollTop < 50;
+
+      setIsScrolled(!isAtTop);
+
+      // If at top, always transparent
+      if (isAtTop) {
+        setIsTransparent(true);
+        clearTimeout(timeoutId);
+      } else {
+        // If scrolled, become opaque/blurred immediately
+        setIsTransparent(false);
+
+        // Reset timer to become transparent again after inactivity
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          setIsTransparent(true);
+        }, 2000); // 2 seconds of inactivity
+      }
+    };
+
+    const scrollContainer = document.getElementById("scrollRoot");
+    if (scrollContainer) {
+      scrollContainer.addEventListener("scroll", handleScroll);
+    }
+
+    return () => {
+      if (scrollContainer) {
+        scrollContainer.removeEventListener("scroll", handleScroll);
+      }
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <nav
-      className="fixed top-0 inset-x-0 z-50 h-14
+      className={`fixed top-0 inset-x-0 z-50 h-14
         flex items-center w-full justify-between gap-2 px-4 py-2
-        transition-all duration-700 bg-dark-base
-       "
+        transition-all duration-700
+        ${!isTransparent ? "bg-dark-base/80 backdrop-blur-md shadow-lg" : "bg-transparent"}
+       `}
     >
       <button onClick={() => smoothScrollTo("start", 1000)}
         className="text-2xl text-portfolio-accent font-bold p-2"> Portfolio </button>
@@ -26,19 +70,19 @@ const Navbar = () => {
         <div>
           <span className="text-sm text-portfolio-accent mr-1">02.</span>
           <button
-            onClick={() => smoothScrollTo("projects", 1000)}
+            onClick={() => smoothScrollTo("experience", 1000)}
             className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
           >
-            Projects
+            Experience
           </button>
         </div>
         <div>
           <span className="text-sm text-portfolio-accent mr-1">03.</span>
           <button
-            onClick={() => smoothScrollTo("skills", 1000)}
+            onClick={() => smoothScrollTo("projects", 1000)}
             className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
           >
-            Skills
+            Projects
           </button>
         </div>
       </div>

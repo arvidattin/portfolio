@@ -5,7 +5,7 @@ const ExperienceCard = ({ title, company, duration, logo, className = "" }) => {
         <div
             className={[
                 // outer card: same size across a row, but capped so it never gets huge
-                "bg-zinc-800 rounded-lg shadow-sm shadow-slate-300/60 overflow-hidden",
+                "bg-dark-base/40 backdrop-blur-sm bg-opacity-60 rounded-lg shadow-sm shadow-slate-300/60 overflow-hidden",
                 "aspect-[4/5] w-full sm:max-w-md md:max-w-[16rem]", // cap width responsively
                 "flex flex-col", // center inside grid cell
                 className,
