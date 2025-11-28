@@ -19,7 +19,7 @@ const ExperienceSection = ({ id }) => {
             logo: axis_logo
         },
         {
-            title: "Software Developer Intern",
+            title: "GSS/T - Part-time Soldier",
             company: "Försvarsmakten",
             duration: "Summer 2023",
             logo: forsvaret_logo
