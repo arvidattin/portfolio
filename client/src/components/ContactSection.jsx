@@ -19,12 +19,12 @@ const ContactSection = ({ id }) => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="flex flex-col items-center gap-6"
                     >
-                        <p className="text-portfolio-accent font-mono text-lg">04. What's Next?</p>
+
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-100">
                             Get In Touch
                         </h2>
                         <p className="text-slate-400 text-base sm:text-lg max-w-md">
-                            I am currently looking for new opportunities. Whether you have a question, want a resume, or just want to say hi, I'll get back to you!
+                            I am currently looking for new opportunities. Whether you have a question, want a resume, or just want to say hello, I'll get back to you!
                         </p>
 
                         <motion.a
