@@ -2,6 +2,11 @@ import React, { useRef } from "react";
 import { motion, useInView } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProjectCard from "./ProjectCard";
+import website_cropped from "../assets/website_cropped.png";
+import dota_cropped from "../assets/dota_cropped.png";
+import NAS_cropped from "../assets/NAS_cropped.png";
+import stranded_cropped from "../assets/stranded_cropped.png";
+import rauk_cropped from "../assets/rauk_cropped.png";
 
 const ProjectsSection = ({ id }) => {
     const ref = useRef(null);
@@ -13,38 +18,35 @@ const ProjectsSection = ({ id }) => {
             title: "Portfolio Website (this)",
             description: "My personal portfolio website built with React, Tailwind CSS, and Framer Motion. Features a custom glassmorphic design, smooth animations, and a fully responsive layout.",
             tags: ["React", "Tailwind CSS", "Framer Motion"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Portfolio"
-        },
-        {
-            title: "Dota 2 Stats Tracker",
-            description: "A full-stack application to track and analyze Dota 2 matches. Uses verify-able OpenDota API data to provide detailed insights into match performance.",
-            tags: ["Node.js", "Express", "React", "OpenDota API"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Dota+Stats"
+            image: website_cropped
         },
         {
             title: "Home NAS Server with Dashboard",
             description: "Centralized home NAS server with media automation. Features include a Pi-hole DNS sinkhole, Usenet-to-Plex pipeline, and Immich for decentralized image hosting.",
-            tags: ["CasaOS", "Raspberry Pi", "Linux", "NAS", "Media/Image Server"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Dashboard"
+            tags: ["CasaOS", "Raspberry Pi", "Linux", "NAS"],
+            image: NAS_cropped
         },
         {
-            title: "Smart Mirror",
-            description: "A DIY magic mirror built with a Raspberry Pi and a two-way mirror. Displays weather, calendar, and news updates.",
-            tags: ["JavaScript", "Electron", "IoT"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Smart+Mirror"
+            title: "Stranded - A fishing game",
+            description: "A low-poly, open-world fishing game made together with a friend for a course.",
+            tags: ["Unity", "C#", "Physics", "Open-world"],
+            image: stranded_cropped
         },
         {
-            title: "Fitness Tracker API",
-            description: "A RESTful API for tracking workouts and nutrition. Built with Node.js and MongoDB, featuring authentication and data visualization endpoints.",
-            tags: ["Node.js", "MongoDB", "Express", "JWT"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Fitness+API"
+            title: "Dota 2 Stats Tracker",
+            description: "A full-stack application to track and analyze Dota 2 matches. Uses verify-able OpenDota API data to provide detailed insights into recent performance.",
+            tags: ["Node.js", "Express", "React", "OpenDota API"],
+            image: dota_cropped
         },
+
+
         {
-            title: "Weather Dashboard",
-            description: "A weather dashboard application that displays current weather and 5-day forecast for any city using the OpenWeatherMap API.",
-            tags: ["React", "API", "CSS"],
-            image: "https://placehold.co/600x400/1e293b/64ffda?text=Weather"
+            title: "Leaderboard Website for friend group ",
+            description: "A leaderboard website for a friend group. Built with React, TypeScript, and Tailwind CSS. Large parts made with Lovable.",
+            tags: ["React", "TypeScript", "Tailwind CSS", "Lovable"],
+            image: rauk_cropped
         }
+
     ];
 
     const scroll = (direction) => {
