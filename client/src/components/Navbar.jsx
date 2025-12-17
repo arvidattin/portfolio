@@ -57,30 +57,30 @@ const Navbar = () => {
       <button onClick={() => smoothScrollTo("start", 1000)}
         className="text-2xl text-portfolio-accent font-bold p-2"> Portfolio </button>
 
-      <div className="flex flex-row justify-between gap-10 ">
-        <div>
-          <span className="text-sm text-portfolio-accent mr-1">01.</span>
+      <div className="flex flex-row  justify-between gap-10 pt-2 ">
+        <div className="hidden md:block flex items-center">
+          <span className=" text-sm text-portfolio-accent mr-1">01.</span>
           <button
             onClick={() => smoothScrollTo("about", 1000)}
-            className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+            className="text-sm font-bold  text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
           >
             About
           </button>
         </div>
-        <div>
-          <span className="text-sm text-portfolio-accent mr-1">02.</span>
+        <div className="hidden md:block flex items-center">
+          <span className=" text-sm text-portfolio-accent mr-1">02.</span>
           <button
             onClick={() => smoothScrollTo("experience", 1000)}
-            className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+            className="text-sm font-bold  text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
           >
             Experience
           </button>
         </div>
-        <div>
-          <span className="text-sm text-portfolio-accent mr-1">03.</span>
+        <div className="hidden md:block flex items-center">
+          <span className=" text-sm text-portfolio-accent mr-1">03.</span>
           <button
             onClick={() => smoothScrollTo("projects", 1000)}
-            className="text-sm font-bold text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+            className="text-sm font-bold  text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
           >
             Projects
           </button>

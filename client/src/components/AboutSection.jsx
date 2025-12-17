@@ -55,15 +55,15 @@ const AboutSection = ({ id }) => {
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 3.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                    className="box-border h-full w-full p-5 self-stretch flex items-center justify-center"
+                    className="box-border h-full w-full p-2 self-stretch flex items-center justify-center"
                 >
                     <div className="bg-dark-base/60 ring-1 ring-portfolio-accent/15 ring-offset-2 ring-offset-dark-base w-auto h-auto p-8 rounded-lg overflow-y-auto max-h-full">
-                        <h1 className="text-4xl font-bold text-portfolio-accent">About Me</h1>
+                        <h1 className="text-2xl font-bold text-portfolio-accent">About Me</h1>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <div className="flex flex-col justify-center">
-                                <h2 className="text-2xl font-semibold mb-4">Who I Am</h2>
+                                <h2 className="text-2xl md:text-4xl font-semibold mb-4">Who I Am</h2>
                                 <p className="text-gray-300 mb-6 leading-relaxed">
-                                    I grew up in Malmö, Sweden, and later moved to study at Linköping University. I am a social and ambitious guy with a deep-seated passion for all things tech-related. I love stepping outside of my comfort zone: I have worked in Austria,
+                                    I grew up in Malmö, Sweden, and later moved to study at Linköping University. I am a social and ambitious guy with a deep-seated passion for all things tech-related. During my time at university I have been head of the Pub Commitee and active in other student organizations, while working part-time as a supervisor for four years.  I love stepping outside of my comfort zone: I have worked in Austria,
                                     scuba dived throughout Asia, and done military service.
                                 </p>
 
@@ -79,7 +79,7 @@ const AboutSection = ({ id }) => {
                             </div>
 
                             {/* Image */}
-                            <div className="flex flex-col items-center justify-center">
+                            <div className="flex hidden md:block flex-col items-center justify-center">
                                 <img
                                     src={ProfilePicture}
                                     alt="Arvid Attin"
