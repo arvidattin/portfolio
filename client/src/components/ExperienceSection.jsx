@@ -4,7 +4,7 @@ import ExperienceCard from "./ExperienceCard";
 // Import logos if needed, or pass them as props from a data file
 import axis_logo from "../assets/axis_logo.png";
 import forsvaret_logo from "../assets/forsvaret_logo.png";
-import kriminalvarden_logo from "../assets/kriminalvarden_logo.png";
+import kriminalvardenLogo from "../assets/Kriminalvarden_logo.png";
 import Coop_logo from "../assets/Coop_logo.png";
 import TechCarousel from "./TechCarousel";
 
@@ -29,7 +29,7 @@ const ExperienceSection = ({ id }) => {
             title: "Correctional Officer - Part-Time / Seasonal",
             company: "Kriminalvården",
             duration: "2022 - 2025",
-            logo: kriminalvarden_logo
+            logo: kriminalvardenLogo
         },
         {
             title: "Store Associate",
