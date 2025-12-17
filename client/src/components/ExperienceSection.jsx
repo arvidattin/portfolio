@@ -87,7 +87,7 @@ const ExperienceSection = ({ id }) => {
                     <div className="flex flex-col items-center justify-center gap-6  max-w-7xl">
                         <div className="bg-dark-base/60 ring-1 ring-portfolio-accent/15 ring-offset-2 ring-offset-dark-base w-full p-3 sm:p-8 rounded-lg sm:overflow-y-auto sm:overscroll-y-contain sm:max-h-full">
                             <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-portfolio-accent mb-8 text-center">Career experience</h1>
-                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
                                 {experiences.map((exp, index) => (
                                     <ExperienceCard key={index} {...exp} />
                                 ))}
