@@ -4,6 +4,7 @@ import HomeSection from "./HomeSection";
 import AboutSection from "./AboutSection";
 import ExperienceSection from "./ExperienceSection";
 import ProjectsSection from "./ProjectsSection";
+import ContactSection from "./ContactSection";
 import Background from "./Background";
 
 const Hero = () => {
@@ -24,6 +25,10 @@ const Hero = () => {
 
       <Element name="projects">
         <ProjectsSection id="projects" />
+      </Element>
+
+      <Element name="contact">
+        <ContactSection id="contact" />
       </Element>
     </div>
   );

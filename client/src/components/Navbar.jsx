@@ -85,6 +85,15 @@ const Navbar = () => {
             Projects
           </button>
         </div>
+        <div className="hidden md:block flex items-center">
+          <span className=" text-sm text-portfolio-accent mr-1">04.</span>
+          <button
+            onClick={() => smoothScrollTo("contact", 1000)}
+            className="text-sm font-bold  text-white hover:text-portfolio-accent transition-colors duration-300 underline-animation"
+          >
+            Contact
+          </button>
+        </div>
       </div>
 
       <div className="flex flex-row items-center">

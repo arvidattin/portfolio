@@ -131,13 +131,21 @@ html {
 
 
 
+/* 5. Hover State: Become visible and start rotation */
 .logo-ring-animation:hover::after {
-
-  /* 5. Hover State: Become visible and start rotation */
-
   @apply opacity-100;
-
   animation: spin-clockwise 1.5s linear infinite;
-  /* Start the rotation animation */
+}
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }

@@ -67,7 +67,7 @@ const AboutSection = ({ id }) => {
                                     scuba dived throughout Asia, and done military service.
                                 </p>
 
-                                <h2 className="text-2xl font-semibold md:mb-4">My Journey</h2>
+                                <h2 className="text-2xl font-semibold md:mb-4">Currently</h2>
                                 <div className="space-y-4">
                                     <div className="border-l-2 border-portfolio-accent pl-4">
                                         <h3 className="font-bold">Student</h3>
