@@ -79,7 +79,7 @@ const AboutSection = ({ id }) => {
                             </div>
 
                             {/* Image */}
-                            <div className="flex hidden md:block flex-col items-center justify-center">
+                            <div className="hidden md:flex  flex-col items-center justify-center">
                                 <img
                                     src={ProfilePicture}
                                     alt="Arvid Attin"
